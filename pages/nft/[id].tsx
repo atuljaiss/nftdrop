@@ -1,6 +1,5 @@
 import React from 'react'
 import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
-import TypeWriter from 'react-typewriter'
 import Typewriter from 'typewriter-effect';
 function NFTDropPage() {
 
@@ -85,12 +84,19 @@ function NFTDropPage() {
             space-y-6 text-center lg:space-y-0 lg:justify-center'>
                 <img className='w-80 object-cover pb-10 lg:h-40' src="https://links.papareact.com/bdy" 
                 alt="" ></img>
-                <TypeWriter typing={0.5}>{<h1 className='text-3xl font-bold lg:font-extrabold
-                lg:text-5xl'> "The Atul-Jaiss Ape Coding Club | NFT Drop" </h1>
-                }</TypeWriter>
+                <h1 className='text-3xl font-bold lg:font-extrabold
+                lg:text-5xl'>
+                <Typewriter
+                    onInit={(typewriter) => {
+                    typewriter.typeString(
+                        "The Atul-Jaiss Ape Coding Club | NFT Drop" 
+                    ).start()
+                    
+                 
+                }}
+                />
+                </h1>
                 
-                   
-            
                 <p className='pt-2 text-xl text-green-500'>
                     13 / 21 NFT's claimed</p>
             </div>
