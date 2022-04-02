@@ -85,7 +85,7 @@ function NFTDropPage({collection}:Props) {
         console.log(err)
         toast("Oops Error occured while Minting!",{
           duration:8000,
-        style:{
+          style:{
           background:'red',
             color:'white',
             fontWeight:'bolder',
@@ -171,15 +171,10 @@ function NFTDropPage({collection}:Props) {
                 alt="" ></img>
                 <h1 className='text-3xl font-bold lg:font-extrabold
                 lg:text-5xl'>
-                <Typewriter
-                    onInit={(typewriter) => {
-                    typewriter.typeString(
-                         `${collection.title} `
-                    ).start()
-                }}
-                />
+                
+                {collection.title}
                 </h1>
-                {loading?(<p className='text-green-500 animate-bounce mt-3'>Loading Supply Count...</p>):(
+                {loading?(<p className='text-green-500 animate-bounce pt-10'>Loading Supply Count...</p>):(
                 <p className='pt-2 text-xl text-bold text-green-500'>
                     {claimedSupply} / {totalSupply?.toString()} NFT's claimed</p>
                     )
