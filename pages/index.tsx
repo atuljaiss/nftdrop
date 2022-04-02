@@ -2,7 +2,6 @@ import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import Typewriter from 'typewriter-effect'
 import {sanityClient, urlFor} from '../sanity'
 import { Collection } from '../typing'
 
@@ -11,8 +10,9 @@ interface Props {
 }
 const Home =  ({collections}:Props) => {
   return (
-    <div className="max-w-6xl mx-auto flex flex-col py-20
-    px-10 2xl-px-0 xl:m-auto">
+   
+    <div className="max-w-7xl mx-auto flex flex-col py-20
+    px-10 2xl-px-0 xl-ps-0 xl:m-auto ">
       <Head>
         <title>NFT DROP</title>
         <link rel="icon" href="/favicon.ico" />
@@ -25,14 +25,14 @@ const Home =  ({collections}:Props) => {
                         Atul-Jaiss</span> {' '}
                     NFT Market Place
       </h1>
-      <main className='bg-slate-100 p-10 shadow-xl shadow-rose-400/20'>
+      <main className='bg-slate-100 p-10 shadow-xl shadow-rose-300/20'>
         <div className='grid space-x-3 md:grid-cols-2 
-                lg:grid-cols-3 xl:grid-cols-4 '>
+                lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4'>
           {collections.map(collection =>(
             <Link href={`/nft/${collection.slug.current}`}>
             <div className='flex flex-col cursor-pointer
             transition-all duration-200 hover:scale-105 items-center'>
-              <img className='h-96  w-60 rounded-2xl object-cover '
+              <img className='h-96 w-60 rounded-2xl object-cover  '
                src={urlFor(collection.mainImage).url()} alt=""
                />
                 <div className='p-5'>
@@ -71,6 +71,7 @@ const Home =  ({collections}:Props) => {
       
                   */}
     </div>
+    
   )
 }
 
