@@ -11,8 +11,8 @@ interface Props {
 }
 const Home =  ({collections}:Props) => {
   return (
-    <div className="max-w-7xl mx-auto flex flex-col py-20
-    px-10 2xl-px-0">
+    <div className="max-w-6xl mx-auto flex flex-col py-20
+    px-10 2xl-px-0 xl:m-auto">
       <Head>
         <title>NFT DROP</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,7 +27,7 @@ const Home =  ({collections}:Props) => {
       </h1>
       <main className='bg-slate-100 p-10 shadow-xl shadow-rose-400/20'>
         <div className='grid space-x-3 md:grid-cols-2 
-                lg:grid-cols-3 2xl:grid-cols-4'>
+                lg:grid-cols-3 xl:grid-cols-4 '>
           {collections.map(collection =>(
             <Link href={`/nft/${collection.slug.current}`}>
             <div className='flex flex-col cursor-pointer
